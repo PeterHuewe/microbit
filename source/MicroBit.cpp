@@ -69,7 +69,6 @@ MicroBit::MicroBit() :
 	resetButton(MICROBIT_PIN_BUTTON_RESET),
     storage(),
     i2c(I2C_SDA0, I2C_SCL0),
-    //i2c(I2C_SDA0, I2C_SCL0),
     messageBus(),
     display(),
     buttonA(MICROBIT_PIN_BUTTON_A, MICROBIT_ID_BUTTON_A),
@@ -86,7 +85,9 @@ MicroBit::MicroBit() :
        MICROBIT_ID_IO_P20,
        CALLIOPE_ID_IO_P3, CALLIOPE_ID_IO_P7, CALLIOPE_ID_IO_P8,
        CALLIOPE_ID_IO_P9, CALLIOPE_ID_IO_P13, CALLIOPE_ID_IO_P14,
-       CALLIOPE_ID_IO_P15, CALLIOPE_ID_IO_P22, CALLIOPE_ID_IO_P28,
+       CALLIOPE_ID_IO_P15, CALLIOPE_ID_IO_P22,
+       CALLIOPE_ID_IO_P26, CALLIOPE_ID_IO_P27,
+       CALLIOPE_ID_IO_P28,
        CALLIOPE_ID_IO_P29, CALLIOPE_ID_IO_P30),
     bleManager(storage),
     radio(),
@@ -100,9 +101,6 @@ MicroBit::MicroBit() :
     // Bring up soft reset functionality as soon as possible.
     resetButton.mode(PullUp);
     resetButton.fall(this, &MicroBit::reset);
-
-    // TODO (only rev 0.3) fixes USBRX pullup -> pullnone to counteract wrong resistor
-    pin_mode(USBRX, PullNone);
 }
 
 /**
