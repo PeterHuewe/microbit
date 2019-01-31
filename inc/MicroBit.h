@@ -134,8 +134,8 @@ class MicroBit
     BLEDevice                   *ble;
 	
 	//Calliope MINI specific devices
-	CalliopeRGB 				rgb;
-	CalliopeSoundMotor 			soundmotor;
+//	CalliopeRGB 				rgb;
+//	CalliopeSoundMotor 			soundmotor;
 	
     /**
       * Constructor.
