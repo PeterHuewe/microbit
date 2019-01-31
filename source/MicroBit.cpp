@@ -92,9 +92,12 @@ MicroBit::MicroBit() :
     ),
     bleManager(storage),
     radio(),
-    ble(NULL),
+    ble(NULL)
+#ifdef TARGET_NRF51_CALLIOPE	    
+	    ,
     rgb(),
     soundmotor()
+#endif
 {
     // Clear our status
     status = 0;
