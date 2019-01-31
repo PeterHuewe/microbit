@@ -19,7 +19,7 @@
     "version": "v2.0.0-calliope-1.0.7",
 
     "dependencies": {
-            "microbit-dal": "peterhuewe/microbit-dal#v2.0.0-calliope-1.0.7"
+            "microbit-dal": "peterhuewe/microbit-dal"
 
     },
 
